@@ -41,6 +41,9 @@ You can view the demo of this project [here](#) (Replace "#" with the actual lin
 ## Usage
 Explore Project Manager to streamline project-related tasks and operations. With features resembling Jira and Kanban boards, users can create, organize, and track tasks effectively. Utilize the integrated charts for insightful data analysis and decision-making. With Angular's robust framework and Angular Material's components, Project Manager offers a responsive and intuitive experience for all users.
 
+
+this is test
+
 ## Contributing
 Contributions are welcome! If you'd like to contribute to this project, please follow the standard GitHub workflow: Fork the repository, create a new branch, make your changes, and submit a pull request.
 
