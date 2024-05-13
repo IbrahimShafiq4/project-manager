@@ -8,8 +8,17 @@
   color: #ef9b28!important;
 }
 
-.primary{
-  width: 35%;
+ngx-dropzone {
+  height: auto;
+  margin-bottom: 2rem;
+  width: fit-content;
+  padding: 0.5rem;
+  // border: none;
+
+  ngx-dropzone-label {
+    font-weight: bolder;
+    font-size: 1.2rem;
+  }
 }
 
 // style for image

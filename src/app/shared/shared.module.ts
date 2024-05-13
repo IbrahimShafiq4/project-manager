@@ -6,9 +6,11 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
-import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxDropzoneModule } from 'ngx-dropzone';
+import { HomeComponent } from './components/home/home.component';
+import { ChartModule } from 'angular-highcharts';
+
 
 @NgModule({
   imports: [
@@ -19,9 +21,10 @@ import { NgxDropzoneModule } from 'ngx-dropzone';
     FormsModule,
     MatIconModule,
     MatButtonModule,
-    NgxDropzoneModule
+    NgxDropzoneModule,
+    ChartModule
   ],
-  declarations: [SidebarComponent, NavbarComponent],
+  declarations: [SidebarComponent, NavbarComponent, HomeComponent],
   exports: [
     SidebarComponent,
     NavbarComponent,
@@ -31,7 +34,9 @@ import { NgxDropzoneModule } from 'ngx-dropzone';
     MatInputModule,
     FormsModule,
     MatIconModule,
-    NgxDropzoneModule
+    NgxDropzoneModule,
+    HomeComponent,
+    ChartModule
   ]
 })
 export class SharedModule {}

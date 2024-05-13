@@ -1,33 +1,35 @@
-<h2 >Login</h2>
+<h2>Login</h2>
 
 <form class="mt-4" [formGroup]="loginForm" (ngSubmit)="onLogin(loginForm)">
 
-<div>
-    
-<mat-form-field appearance="fill" class="w-75 mx-auto">
-    <mat-label>E-mail</mat-label>
-    <input  formControlName="email" type="email"  placeholder="Enter your E-mail" matInput placeholder="Placeholder">
-    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-    <!-- <mat-hint>Hint</mat-hint> -->
-  </mat-form-field>
-  
-</div>
 
-<div>
-      <mat-form-field  class="w-75 mx-auto">
-    <mat-label>password</mat-label>
-    <input formControlName="password"  matInput placeholder="Enter your password"  matInput [type]="hide ? 'password' : 'text'">
-    <button type="button" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-      <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-    </button>
-  </mat-form-field>
-</div>
-<div class="links d-flex justify-content-between align-items-center">
+  <div>
+
+    <mat-form-field class="w-100">
+      <mat-label>E-mail</mat-label>
+      <input formControlName="email" type="email" placeholder="Enter your E-mail" matInput placeholder="Placeholder">
+      <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+      <!-- <mat-hint>Hint</mat-hint> -->
+    </mat-form-field>
+
+  </div>
+
+  <div>
+    <mat-form-field class="w-100">
+      <mat-label>password</mat-label>
+      <input formControlName="password" matInput placeholder="Enter your password" matInput
+        [type]="hide ? 'password' : 'text'">
+      <button type="button" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+        [attr.aria-pressed]="hide">
+        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
+    </mat-form-field>
+  </div>
+  <div class="links d-flex justify-content-between align-items-center my-3">
     <a class="text-decoration-none text-white cursor-pointer" routerLink="/auth/register" role="button">Register Now ?</a>
     <a class="text-decoration-none text-white cursor-pointer" routerLink="/auth/forget" role="button">Forget Password ?</a>
-
-  
-  </div>
+<div>
+    
 
   <!-- Login Button -->
   <button type="submit" class="primary w-100">Login</button>

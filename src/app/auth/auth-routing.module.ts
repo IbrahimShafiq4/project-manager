@@ -13,7 +13,7 @@ const routes: Routes = [
     { path: '', component: LoginComponent, title: 'Login' },
     { path:'changePass' ,component:ChangePasswordComponent, title: 'change-password' },
     { path: 'register', component: RegisterComponent, title: 'Register' },
-    { path: 'forget', component: ForegtPasswordComponent, title: 'reset' },
+    { path: 'forget', component: ForegtPasswordComponent, title: 'forget' },
     { path: 'reset', component: ResetPasswordComponent, title: 'reset' },
     { path: 'verify', component: VerifyAccountComponent, title: 'Verify' }
   ]}
