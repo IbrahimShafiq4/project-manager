@@ -7,7 +7,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { GlobalInterceptor } from './core/interceptors/global/global.interceptor';
-
+import { ChartModule } from 'angular-highcharts';
 @NgModule({
   declarations: [
     AppComponent
@@ -19,6 +19,7 @@ import { GlobalInterceptor } from './core/interceptors/global/global.interceptor
     HttpClientModule,
     ToastrModule.forRoot(),
     ReactiveFormsModule,
+    ChartModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,

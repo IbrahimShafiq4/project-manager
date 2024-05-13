@@ -1,6 +1,28 @@
-// @import '../../../../styles.scss';
+::ng-deep
+  .mdc-text-field--outlined:not(.mdc-text-field--disabled)
+  .mdc-floating-label,
+::ng-deep
+  .mdc-text-field--outlined:not(.mdc-text-field--disabled)
+  .mdc-floating-label--float-above {
+  color: #fff !important;
+}
 
-// mat-label{
-//     color: white !important;
-//    margin: 10px;
-// }
+::ng-deep .mdc-text-field--filled:not(.mdc-text-field--disabled) {
+  background-color: transparent !important;
+}
+
+input::placeholder {
+  color: #fff !important;
+}
+
+input {
+  color: #fff !important;
+}
+
+::ng-deep mat-label {
+  color: #fff;
+}
+
+::ng-deep mat-form-field:has(:visited, :focus) mat-label {
+  color: var(--main-color);
+}

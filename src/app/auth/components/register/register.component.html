@@ -3,8 +3,8 @@
   <form class="example-form" [formGroup]="registerForm" (ngSubmit)="onRegister(registerForm)">
 
     <div class="row  mb-2 justify-content-center">
-      <div class="col-md-2 col-sm-6">
-        <ngx-dropzone [class]="files.length?'border-0':'border-1'" (change)="onSelect($event)">
+      <div class="col-12">
+        <ngx-dropzone [class]="files.length?'border-0':'border-1'" class=" mx-auto" (change)="onSelect($event)">
           <ngx-dropzone-label> <i class="fa-upload fa-solid"></i> Upload Your Image here</ngx-dropzone-label>
 
           <ngx-dropzone-image-preview ngProjectAs="ngx-dropzone-preview" *ngFor="let f of files" [file]="f"
@@ -16,85 +16,107 @@
     </div>
 
 
-    <div class="row">
+    <div class="row gy-3">
       <div class="col-md-6">
-        <mat-form-field appearance="fill" class="w-100">
-          <mat-label>User Name</mat-label>
-          <input matInput formControlName="userName" type="text" placeholder="Placeholder">
-          <mat-error *ngIf="(userName?.touched||userName?.value)&& userName?.errors" class="invalid">
-            <span class="text-danger " *ngIf="userName?.getError('required')"><strong>Name is Required</strong> </span>
-            <span class="text-danger" *ngIf="userName?.getError('maxlength')"><strong>Max Length 20</strong> </span>
-            <span class="text-danger" *ngIf="userName?.getError('pattern')"><strong> The userName must contain characters and end with numbers without spaces</strong>  </span>
-          </mat-error>
-        </mat-form-field>
+        <div class="p-2">
+          <mat-form-field appearance="fill" class="w-100">
+            <mat-label>User Name</mat-label>
+            <input matInput formControlName="userName" type="text" placeholder="Placeholder">
+            <mat-error *ngIf="(userName?.touched||userName?.value)&& userName?.errors" class="invalid">
+              <span class="text-danger " *ngIf="userName?.getError('required')"><strong>Name is Required</strong>
+              </span>
+              <span class="text-danger" *ngIf="userName?.getError('maxlength')"><strong>Max Length 20</strong> </span>
+              <span class="text-danger" *ngIf="userName?.getError('pattern')"><strong> The userName must contain
+                  characters and end with numbers without spaces</strong> </span>
+            </mat-error>
+          </mat-form-field>
+        </div>
       </div>
 
       <div class="col-md-6">
-        <mat-form-field appearance="fill" class="w-100">
-          <mat-label>Email</mat-label>
-          <input  formControlName="email" matInput placeholder="Placeholder">
-          <mat-error *ngIf="(email?.touched||email?.value)&& email?.errors" class="invalid">
-            <span class="text-danger" *ngIf="email?.getError('required')"><strong> Email is Required</strong></span>
-            <span class="text-danger" *ngIf="email?.getError('email')"><strong>Email invalid format</strong> </span>
+        <div class="p-2">
+          <mat-form-field appearance="fill" class="w-100">
+            <mat-label>Email</mat-label>
+            <input formControlName="email" matInput placeholder="Placeholder">
+            <mat-error *ngIf="(email?.touched||email?.value)&& email?.errors" class="invalid">
+              <span class="text-danger" *ngIf="email?.getError('required')"><strong> Email is Required</strong></span>
+              <span class="text-danger" *ngIf="email?.getError('email')"><strong>Email invalid format</strong> </span>
 
-          </mat-error>
-        </mat-form-field>
+            </mat-error>
+          </mat-form-field>
+        </div>
       </div>
 
       <div class="col-md-6">
-        <mat-form-field appearance="fill" class="w-100">
-          <mat-label>Country</mat-label>
-          <input formControlName="country" matInput placeholder="Placeholder">
-          <mat-error *ngIf="(country?.touched||country?.value)&& country?.errors" class="invalid">
-            <span class="text-danger" *ngIf="country?.getError('required')"> <strong>Country is Required</strong> </span>
-          </mat-error>
-        </mat-form-field>
+        <div class="p-2">
+          <mat-form-field appearance="fill" class="w-100">
+            <mat-label>Country</mat-label>
+            <input formControlName="country" matInput placeholder="Placeholder">
+            <mat-error *ngIf="(country?.touched||country?.value)&& country?.errors" class="invalid">
+              <span class="text-danger" *ngIf="country?.getError('required')"> <strong>Country is Required</strong>
+              </span>
+            </mat-error>
+          </mat-form-field>
+        </div>
       </div>
 
       <div class="col-md-6">
-        <mat-form-field appearance="fill" class="w-100">
-          <mat-label>Phone Number</mat-label>
-          <input formControlName="phoneNumber" matInput placeholder="Placeholder">
-          <mat-error *ngIf="(phoneNumber?.touched||phoneNumber?.value)&& phoneNumber?.errors" class="invalid">
-            <span class="text-danger" *ngIf="phoneNumber?.getError('required')"> <strong>phoneNumber is Required</strong> </span>
-            <span class="text-danger" *ngIf="phoneNumber?.getError('pattern')"><strong> Accept only Egypt Phone Number</strong></span>
-          </mat-error>
-        </mat-form-field>
+        <div class="p-2">
+          <mat-form-field appearance="fill" class="w-100">
+            <mat-label>Phone Number</mat-label>
+            <input formControlName="phoneNumber" matInput placeholder="Placeholder">
+            <mat-error *ngIf="(phoneNumber?.touched||phoneNumber?.value)&& phoneNumber?.errors" class="invalid">
+              <span class="text-danger" *ngIf="phoneNumber?.getError('required')"> <strong>phoneNumber is
+                  Required</strong> </span>
+              <span class="text-danger" *ngIf="phoneNumber?.getError('pattern')"><strong> Accept only Egypt Phone
+                  Number</strong></span>
+            </mat-error>
+          </mat-form-field>
+        </div>
       </div>
 
       <div class="col-md-6">
-        <mat-form-field appearance="fill" class="w-100">
-          <mat-label> Password</mat-label>
-          <input matInput formControlName="password" [type]="hide ? 'password' : 'text'">
-          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
-            [attr.aria-pressed]="hide">
-            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-          </button>
-          <mat-error *ngIf="(password?.touched||password?.value)&& password?.errors" class="invalid">
-            <span class="text-danger" *ngIf="password?.getError('required')"> <strong>phoneNumber is Required</strong> </span>
-            <span class="text-danger" *ngIf="password?.getError('pattern')"><strong> password must be at least 8 characters and include both letters and numbers</strong></span>
-          </mat-error>
-        </mat-form-field>
+        <div class="p-2">
+          <mat-form-field appearance="fill" class="w-100">
+            <mat-label> Password</mat-label>
+            <input matInput formControlName="password" [type]="hide ? 'password' : 'text'">
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+              [attr.aria-pressed]="hide">
+              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+            <mat-error *ngIf="(password?.touched||password?.value)&& password?.errors" class="invalid">
+              <span class="text-danger" *ngIf="password?.getError('required')"> <strong>phoneNumber is Required</strong>
+              </span>
+              <span class="text-danger" *ngIf="password?.getError('pattern')"><strong> password must be at least 8
+                  characters and include both letters and numbers</strong></span>
+            </mat-error>
+          </mat-form-field>
+        </div>
       </div>
 
       <div class="col-md-6">
-        <mat-form-field appearance="fill" class="w-100">
-          <mat-label>confirm Password</mat-label>
-          <input matInput formControlName="confirmPassword" [type]="hide ? 'password' : 'text'">
-          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
-            [attr.aria-pressed]="hide">
-            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-          </button>
-          <mat-error *ngIf="(confirmPassword?.touched||confirmPassword?.value)&& confirmPassword?.errors">
-            <span  class="text-danger" *ngIf="confirmPassword?.getError('required')"><strong>confirmPassword is Required</strong> </span>
-            <span class="text-danger" *ngIf="confirmPassword?.errors?.['confirmPassMismatchPass']" ><strong>confirm Pass Mismatch Pass</strong> </span>
-          </mat-error>
-        </mat-form-field>
+        <div class="p-2">
+          <mat-form-field appearance="fill" class="w-100">
+            <mat-label>confirm Password</mat-label>
+            <input matInput formControlName="confirmPassword" [type]="hide ? 'password' : 'text'">
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+              [attr.aria-pressed]="hide">
+              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+            <mat-error *ngIf="(confirmPassword?.touched||confirmPassword?.value)&& confirmPassword?.errors">
+              <span class="text-danger" *ngIf="confirmPassword?.getError('required')"><strong>confirmPassword is
+                  Required</strong> </span>
+              <span class="text-danger" *ngIf="confirmPassword?.errors?.['confirmPassMismatchPass']"><strong>confirm
+                  Pass Mismatch Pass</strong> </span>
+            </mat-error>
+          </mat-form-field>
+        </div>
       </div>
 
     </div>
 
-    <button class="primary  mt-1 mx-auto d-flex justify-content-center" type="submit" [disabled]="registerForm.invalid">Register</button>
+    <button class="primary mt-3 mx-auto d-flex justify-content-center" role="button"
+      [disabled]="registerForm.invalid">Register</button>
 
   </form>
 </section>
